@@ -113,8 +113,9 @@ func keyFloat(v reflect.Value) (f float64, ok bool) {
 			return 1, true
 		}
 		return 0, true
+	default:
+		return 0, false
 	}
-	return 0, false
 }
 
 // numLess returns whether a < b.
@@ -129,6 +130,7 @@ func numLess(a, b reflect.Value) bool {
 		return a.Uint() < b.Uint()
 	case reflect.Bool:
 		return !a.Bool() && b.Bool()
+	default:
+		panic("not a number")
 	}
-	panic("not a number")
 }
