@@ -1,4 +1,4 @@
-module gopkg.in/yaml.v3
+module github.com/hfd94/yaml
 
 go 1.23rc1
 
